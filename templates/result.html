@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+
+        div.minimalistBlack {
+  border: 1px solid #000000;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.divTable.minimalistBlack .divTableCell, .divTable.minimalistBlack .divTableHead {
+  border: 1px solid #000000;
+  padding: 5px 4px;
+}
+.divTable.minimalistBlack .divTableBody .divTableCell {
+  font-size: 24px;
+}
+.divTable.minimalistBlack .divTableHeading {
+  background: #1b1e24;
+  border-bottom: 1px solid #000000;
+}
+.divTable.minimalistBlack .divTableHeading .divTableHead {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  text-align: left;
+}
+.minimalistBlack .tableFootStyle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  border-top: 3px solid #000000;
+}
+.minimalistBlack .tableFootStyle {
+  font-size: 24px;
+}
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading { display: table-header-group;}
+.divTableCell, .divTableHead { display: table-cell;}
+.divTableHeading { display: table-header-group;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}
+
+    </style>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Shop Item - Start Bootstrap Template</title>
+    <!--tablesorter-->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="../static/js/jquery.tablesorter.min.js"></script>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../static/assets/favicon.ico"/>
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../static/css/styles.css" rel="stylesheet"/>
+
+    <title>Title</title>
+</head>
+<body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#!">분산 및 병렬처리</a>
+
+    </div>
+</nav>
+
+<!-- Product section-->
+<section class="py-2">
+    <div class="container my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+
+            <div class="col-md-6 p-lg-3"><img src="{{ url_for('static', filename='images/word_cloud.png') }}"/>
+                <div class="divTable minimalistBlack">
+                  <div class="divTableHeading">
+                    <div class="divTableRow">
+                        <div class="divTableHead" style="color:#D5DDE5">DB 저장에 걸린 시간</div>
+                        <div class="divTableHead" style="color:#D5DDE5">총 걸린 시간</div>
+                    </div>
+                  </div>
+                  <div class="divTableBody">
+                      {% for t in time_list %}
+                    <div class="divTableRow">
+                      <div class="divTableCell">{{ t[0] }}</div>
+                      <div class="divTableCell">{{ t[1] }}</div>
+                    </div>
+                      {% endfor %}
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="table-title">
+                    <h3 style="color: black">Data Table</h3>
+                    <input class="search-filter mx-2" id="filter0" type="text" placeholder="Search for words"/>
+                </div>
+                <div style=" flex: 0 0 350px;
+    overflow-y: scroll;
+    white-space: nowrap;
+    height: 700px;">
+                    <table class="table-fill tablesorter" id="filter">
+                        <thead>
+                        <tr>
+                            <th col-index=1 scope="col" class="text-left">WORD</th>
+                            <th col-index=2 scope="col" class="text-left">COUNT</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                        {% for i in word %}
+                            <tr>
+                                <td class="text-left">{{ i.word }}</td>
+                                <td class="text-left">{{ i.count }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<style>
+    body {
+        background-color: #EFF5F5;
+        font-family: "Roboto", helvetica, arial, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        text-rendering: optimizeLegibility;
+    }
+
+    div.table-title {
+        display: block;
+        margin: auto;
+        max-width: 600px;
+        padding: 5px;
+        width: 100%;
+    }
+
+    .table-title h3 {
+        color: #fafafa;
+        font-size: 30px;
+        font-weight: 400;
+        font-style: normal;
+        font-family: "Roboto", helvetica, arial, sans-serif;
+        text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+        text-transform: uppercase;
+    }
+
+
+    /*** Table Styles **/
+
+    .table-fill {
+        background: white;
+        border-radius: 3px;
+        border-collapse: collapse;
+        height: 320px;
+        margin: auto;
+        max-width: 600px;
+        padding: 5px;
+        width: 100%;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        animation: float 5s infinite;
+    }
+
+    th {
+        width: 50px;
+        color: #D5DDE5;;
+        background: #1b1e24;
+        border-bottom: 4px solid #9ea7af;
+        border-right: 1px solid #343a45;
+        font-size: 23px;
+        font-weight: 100;
+        padding: 24px;
+        text-align: left;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        vertical-align: middle;
+    }
+
+    th:first-child {
+        border-top-left-radius: 3px;
+    }
+
+    th:last-child {
+        border-top-right-radius: 3px;
+        border-right: none;
+    }
+
+    tr {
+        border-top: 1px solid #C1C3D1;
+        border-bottom-: 1px solid #C1C3D1;
+        color: #666B85;
+        font-size: 16px;
+        font-weight: normal;
+        text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+    }
+
+    tr:hover td {
+        background: #4E5066;
+        color: #FFFFFF;
+        border-top: 1px solid #22262e;
+    }
+
+    tr:first-child {
+        border-top: none;
+    }
+
+    tr:last-child {
+        border-bottom: none;
+    }
+
+    tr:nth-child(odd) td {
+        background: #EBEBEB;
+    }
+
+    tr:nth-child(odd):hover td {
+        background: #4E5066;
+    }
+
+    tr:last-child td:first-child {
+        border-bottom-left-radius: 3px;
+    }
+
+    tr:last-child td:last-child {
+        border-bottom-right-radius: 3px;
+    }
+
+    td {
+        background: #FFFFFF;
+        padding: 20px;
+        text-align: left;
+        vertical-align: middle;
+        font-weight: 300;
+        font-size: 18px;
+        text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+        border-right: 1px solid #C1C3D1;
+    }
+
+    td:last-child {
+        border-right: 0px;
+    }
+
+    th.text-left {
+        text-align: left;
+    }
+
+    th.text-center {
+        text-align: center;
+    }
+
+    th.text-right {
+        text-align: right;
+    }
+
+    td.text-left {
+        text-align: left;
+    }
+
+    td.text-center {
+        text-align: center;
+    }
+
+    td.text-right {
+        text-align: right;
+    }
+
+
+    .search-filter {
+        margin: 3px;
+    }
+</style>
+
+
+<script>
+    $(document).ready(function () {
+        $("#filter").tablesorter();
+    });
+</script>
+<script src="../static/js/TableFilter.min.js"></script>
+</html>

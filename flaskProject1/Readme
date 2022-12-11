@@ -1,0 +1,8 @@
+1. 서버의 ip주소 확인
+2. 클라이언트 ip주소 확인
+
+3. remote() python~ 시 file명 맞는 지 확인
+4. remote() 시 pc1, test, 1234 맞는 지 확인
+
+5. db이름, table이름 맞는 지 확인
+6. server는 root, 클라이언트들은 test 계정
