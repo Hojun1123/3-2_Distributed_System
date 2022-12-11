@@ -21,10 +21,10 @@ cursor = db.cursor(pymysql.cursors.DictCursor)
 
 #db connection
 server_db = pymysql.connect(
-    user = "test",
-    passwd = "qwe123!@#",
-    host = "49.174.54.239",
-    port = 11124,
+    user = "t",
+    passwd = "",
+    host = "",
+    port =,
     db = "word_count"
 )
 cursor2 = server_db.cursor(pymysql.cursors.DictCursor)
