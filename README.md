@@ -31,9 +31,21 @@ word_count는 아래와 같은 절차를 거친 후, Client에 DB에 [word, coun
 
 ### 실행 페이지
 ![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/949cd3eb-076f-4bf9-bc76-5e01a6263378)
+![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/58850035-f9af-4b19-89c5-683982e1c061)
+![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/7363165e-f3cd-4b6d-9d32-59bdb79e0da0)
 
 ### 특이사항
-![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/4585942e-213b-48f1-a88e-c19b1e2bec28)
+![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/9319101a-bbcf-4d81-abb5-e43365811860)
+
+
 ![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/d20cc662-f54b-4173-b89a-b64c07f139b7)
 
+5.1 PC 연결 실패 시 문제
+Server PC 중 연결이 실패한 PC가 존재하는 경우 Data를 얻지 못하는 문제
+-> 어떤 Server PC에 대해 연결이 실패할 경우, 작업을 다른 PC들에게 재할당
+
+5.2 속도 불균형 문제
+PC 간의 인터넷 환경 차이 등으로 인하여, 속도가 맞지 않는 경우에 특정 PC에 의해 전체 작업 시간이 지연된다.
+-> 데이터의 일부분에 대한 처리속도를 구하여, 그에 비례하게 각 PC에 작업을 할당
+![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/33d086c2-4cdf-43d9-817a-a56ff2a27ebd)
 
