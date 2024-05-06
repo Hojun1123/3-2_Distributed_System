@@ -19,8 +19,21 @@
 ![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/4ee5fbb2-83db-4e1e-8d3b-e39f2ae20fd6)
 
 -------
-### 보고서
+### 크롤링
 ![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/03da0587-1c6e-4c69-9c4d-84c507cda373)
 ![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/0485606f-4544-4570-bab5-0304d339fefc)
 ![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/937a1482-b52f-42c9-bd29-b61439696d18)
+
+### Word Counting(word_count.py, Server에서 수행)
+텍스트(HTML) 데이터를 각 서버 PC로 전송을 마치면, Client는 전송 완료된 서버 PC에 대해 word_count.py를 원격 실행한다.
+word_count는 아래와 같은 절차를 거친 후, Client에 DB에 [word, count] 형태로 결과를 전송한다.
+![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/05a0c8b2-8baf-455d-b685-058a902e0040)
+
+### 실행 페이지
+![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/949cd3eb-076f-4bf9-bc76-5e01a6263378)
+
+### 특이사항
+![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/4585942e-213b-48f1-a88e-c19b1e2bec28)
+![image](https://github.com/Hojun1123/3-2_Distributed_System/assets/65999992/d20cc662-f54b-4173-b89a-b64c07f139b7)
+
 
